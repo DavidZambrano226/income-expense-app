@@ -20,6 +20,8 @@ import { environment } from '../environments/environment';
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from './app.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { IncomeExpensePipe } from './pipes/income-expense.pipe';
+import { TranslateTypePipe } from './pipes/translate-type.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     DetailComponent,
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    IncomeExpensePipe,
+    TranslateTypePipe
   ],
   imports: [
     BrowserModule,
