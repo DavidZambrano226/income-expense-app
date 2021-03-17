@@ -22,6 +22,7 @@ import { appReducers } from './app.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { IncomeExpensePipe } from './pipes/income-expense.pipe';
 import { TranslateTypePipe } from './pipes/translate-type.pipe';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { TranslateTypePipe } from './pipes/translate-type.pipe';
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
+    ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,6 +15,9 @@ export class IncomeExpenseService {
     console.log(incomeExpense);
 
     const uid = this.authService.getUser.uid;
+
+    delete incomeExpense.uid;
+
     return this.firestore.doc(`${uid}/income-expense`)
       .collection('items')
       .add({...incomeExpense});
