@@ -7,7 +7,7 @@ import * as incomeExpense from './income-expense/income-expense.reducer';
 export interface AppState {
    ui: ui.State;
    user: auth.State;
-   incomeExpense: incomeExpense.State;
+   // incomeExpense: incomeExpense.State;
 }
 
 
@@ -15,5 +15,5 @@ export interface AppState {
 export const appReducers: ActionReducerMap<AppState> = {
    ui: ui.uiReducer,
    user: auth.authReducer,
-   incomeExpense: incomeExpense.incomeExpenseReducer
+   // incomeExpense: incomeExpense.incomeExpenseReducer
 };

@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DasboardRoutes } from './dashboard/dashboard.routes';
 import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
@@ -11,9 +9,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { 
     path: '',
-    component: DashboardComponent,
-    children: DasboardRoutes,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
+    loadChildren: () => import('./income-expense/income-expense.module').then(m => m.IncomeExpenseModule)
   },
   { path: '**', redirectTo: ''},
 ];

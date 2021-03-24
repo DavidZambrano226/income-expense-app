@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { IncomeExpenseModel } from 'src/app/models/income-expense.mode';
-import { AppState } from '../../app.reducer';
+import { AppStateWithIncome } from '../income-expense.reducer';
 import { MultiDataSet, Label, Color } from 'ng2-charts';
 
 @Component({
@@ -22,7 +22,7 @@ export class StatisticComponent implements OnInit {
   public doughnutChartColors: Color[] = [{backgroundColor: ['#36a2eb', '#ff6384',]}];
 
 
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<AppStateWithIncome>) { }
 
   ngOnInit() {
     this.store.select('incomeExpense').subscribe(({ items }) => this.generateStatistic( items ));

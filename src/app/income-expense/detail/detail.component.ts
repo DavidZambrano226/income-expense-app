@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from '../../app.reducer';
+import { AppStateWithIncome } from '../income-expense.reducer';
 import { IncomeExpenseModel } from '../../models/income-expense.mode';
 import { Subscription } from 'rxjs';
 import { IncomeExpenseService } from '../../services/income-expense.service';
@@ -16,7 +16,7 @@ export class DetailComponent implements OnInit, OnDestroy {
   incomeExpenses: IncomeExpenseModel[];
   itemSubs: Subscription;
 
-  constructor( private store: Store<AppState>, private incomeService: IncomeExpenseService ) { }
+  constructor( private store: Store<AppStateWithIncome>, private incomeService: IncomeExpenseService ) { }
 
   ngOnInit() {
 

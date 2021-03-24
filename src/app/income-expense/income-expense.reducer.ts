@@ -1,9 +1,14 @@
 import { createReducer, on } from '@ngrx/store';
 import { IncomeExpenseModel } from '../models/income-expense.mode';
 import * as incomeExpenseActions from './income-expense.actions';
+import { AppState } from '../app.reducer';
 
 export interface State {
     items: IncomeExpenseModel[];
+}
+
+export interface AppStateWithIncome extends AppState {
+    incomeExpense: State;
 }
 
 export const initialState: State = {
