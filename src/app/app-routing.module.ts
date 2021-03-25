@@ -11,7 +11,8 @@ const routes: Routes = [
     path: '',
     canActivate: [AuthGuard],
     canLoad: [AuthGuard],
-    loadChildren: () => import('./income-expense/income-expense.module').then(m => m.IncomeExpenseModule)
+    // loadChildren: () => import('./income-expense/income-expense.module').then(m => m.IncomeExpenseModule)
+    loadChildren: './income-expense/income-expense.module#IncomeExpenseModule',
   },
   { path: '**', redirectTo: ''},
 ];
